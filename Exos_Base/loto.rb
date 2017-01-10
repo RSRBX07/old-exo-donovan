@@ -1,0 +1,1 @@
+print "Les résultats du tirage sont : #{results = Array.new((1..45).to_a).shuffle.take(5).sort}"
