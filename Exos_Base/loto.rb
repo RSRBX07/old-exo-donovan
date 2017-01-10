@@ -19,7 +19,7 @@ while stop == false
     cagnote += prix_billet*nb_joueurs*0.8
 
     #affichage de la cagnotte
-    puts "le montant de la cagnote est de #{cagnote} €"
+    puts "Le montant de la cagnote est de #{cagnote} €"
 
     #calcul du tirage
     puts "Les résultats du tirage sont : #{tirage = Array.new((1..45).to_a).shuffle.take(5).sort}"
@@ -39,11 +39,13 @@ while stop == false
     puts "Vous avez #{numeros_gagnants} numéros gagnants"
 
     #Calcul montant gagné
-    if numeros_gagnants != 5
-        montant_gagne = Math.sqrt(5 / numeros_gagnants)
-        montant_gagne = (montant_gagne * cagnote).toFixed(2)
+    if numeros_gagnants != 5 && numeros_gagnants != 0
+        coef_gain = Math.sqrt(5 / numeros_gagnants)
+        montant_gagne = (cagnote * coef_gain).to_i
         puts "Vous obtenez #{montant_gagne}€"
         cagnote -= montant_gagne
+    elsif numeros_gagnants == 0
+        puts "Vous avez perdu"
     else
         puts "Vous gagnez le gros lot de #{cagnote}! Félicitation!"
         cagnote = 0;
@@ -51,7 +53,7 @@ while stop == false
 
     #Stop?
     puts "Arrêter? (stop)"
-    input = gets.to_s
+    input = gets.chomp
     if input == "stop"
         stop = true
     end
