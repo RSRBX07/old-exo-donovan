@@ -1,10 +1,15 @@
 #init variables
 cagnote = 0
 benefice = 0
+nb_joueurs = 1
+nb_essais = 0
+
+#Config -----------
 prix_billet = 2
 rand_nb_joueurs = true
 rand_tirage_joueur = true
-nb_joueurs = 1
+tirage_auto = false
+#------------------
 
 stop = false
 while stop == false
@@ -56,7 +61,7 @@ while stop == false
     #Calcul montant gagné
     if numeros_gagnants != 5 && numeros_gagnants != 0
         coef_gain = numeros_gagnants.to_f / 5
-        montant_gagne = (cagnote * coef_gain * coef_gain).to_i
+        montant_gagne = (cagnote * coef_gain * coef_gain * coef_gain).to_i
         puts "Vous obtenez #{montant_gagne}€"
         cagnote -= montant_gagne
     elsif numeros_gagnants == 0
@@ -64,16 +69,25 @@ while stop == false
     else
         puts "Vous gagnez le gros lot de #{cagnote}! Félicitation!"
         cagnote = 0;
-    end
-
-    #Stop?
-    puts "Arrêter? (stop)"
-    input = gets.chomp
-    if input == "stop"
         stop = true
     end
 
+
+    if tirage_auto == false
+        #Stop?
+        puts "Arrêter? (stop)"
+        input = gets.chomp
+        if input == "stop"
+            stop = true
+        end
+    end
+
+    nb_essais += 1
+
 end
+puts "#{nb_essais} essais ont été nécessaires pour gagner"
+
+
 
 
 
