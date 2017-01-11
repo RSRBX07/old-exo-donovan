@@ -1,6 +1,22 @@
 #----- Methods ----------
-def roll
-    return Random.rand(1..6)
+def roll (cheating, value)
+    if cheating && rand(1..100) < 80
+        return value
+    else
+        return rand(1..6)
+    end
+end
+
+def print_results (sort_or_not, tab)
+    if sort_or_not
+        tab = tab.sort
+        print "\nLes résultats triés sont : "
+    else
+        print "Les résultats des lancers sont : "
+    end
+    tab.each do |value|
+    print " #{value} "
+    end
 end
 
 #-----Application--------
@@ -12,24 +28,16 @@ results = Array.new()
 somme = 0;
 
 # faire les lancers
-for i in 0..nb_try-1
-    randice = roll
-    results.push randice 
-    somme += randice
+(0..nb_try-1).each do |i|
+    results.push roll true, 6
+    somme += results[i]
 end
  
  #afficher les résultats non triés
-print "Les résultats des lancers sont : "
-results.each do |value|
-    print " #{value} "
-end
+print_results false, results
 
 #afficher les résultats triés
-print "\nLes résultats triés sont : "
-results = results.sort
-results.each do |value|
-    print " #{value} "
-end
+print_results true, results
 
 #calculer et afficher le moyenne
 moy = (somme.to_f)/(nb_try.to_f)
