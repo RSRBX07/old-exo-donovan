@@ -2,9 +2,9 @@
 # - qui prend une insatnce de Fix_num en argument (accepte de 0 à 9)
 # - qui retourne la chaine de caractères du nombre en tout lettre en français
 
-def fix_num (num)
+def fix_num num
     hash = {
-        0 => "0",
+        0 => "zéro",
         1 => "un",
         2 => "deux",
         3 => "trois",
@@ -22,6 +22,15 @@ def fix_num (num)
     end
 end
 
-print "Entrez le nombre à traduire"
-num = gets.to_i
-puts fix_num(num)
+def fix_num_v2 num
+    tab = ["zéro", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf"]
+    return tab[num] if num < 9 || num > 0
+    return  "Entrée erronée"
+end
+
+print "Entrez le nombre à traduire (v1) : "
+puts fix_num gets.to_i
+
+print "Entrez le nombre à traduire (v2) : "
+puts fix_num_v2 gets.to_i
+
