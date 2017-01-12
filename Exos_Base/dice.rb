@@ -28,4 +28,4 @@ meta_hash = {
     "Lancers" => results
 }
 
-puts "\n#{meta_hash["Nom"]} agé de #{meta_hash["Age"]} ans a fait les lancer suivants : #{meta_hash["Lancers"]}"
+puts "#{meta_hash["Nom"]} agé de #{meta_hash["Age"]} ans a fait les lancer suivants : #{meta_hash["Lancers"]}"
