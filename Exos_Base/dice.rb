@@ -4,18 +4,6 @@ def roll (value, percent)
     return rand(1..6)
 end
 
-def print_results (sort_or_not, tab)
-    if sort_or_not
-        tab = tab.sort
-        print "\nLes résultats triés sont : "
-    else
-        print "Les résultats des lancers sont : "
-    end
-    tab.each do |value|
-    print " #{value} "
-    end
-end
-
 #-----Application--------
 #Tirage d'un dé à 6 faces
 
