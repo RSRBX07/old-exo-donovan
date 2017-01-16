@@ -9,7 +9,7 @@ class FrenchNumber
   def numbers_in_french_deca ; ["","", "vingt ", "trente ", "quarante ", "cinquante ", "soixante ", "soixante-", "quatre-vingt ", "quatre-vingt-"] end
 
   def num_in_french num
-    return "Entrée erronée" unless input_valid? num
+    return "Entrée erronée" if num < 0 || num > 99
     return numbers_in_french_unit[num].capitalize if num < 10
 
     num_deca = num / 10
@@ -24,11 +24,6 @@ class FrenchNumber
       outnumber += numbers_in_french_unit[num_unit]
     end
     outnumber.capitalize
-  end
-
-  private
-  def input_valid? num
-    num < 99 || num > 0
   end
 
 end
