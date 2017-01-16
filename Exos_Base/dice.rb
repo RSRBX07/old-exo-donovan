@@ -29,3 +29,7 @@ meta_hash = {
 }
 
 puts "#{meta_hash["Nom"]} agé de #{meta_hash["Age"]} ans a fait les lancer suivants : #{meta_hash["Lancers"]}"
+
+class Dice
+    
+end
