@@ -1,5 +1,5 @@
 class Dice
-
+    
     def roll (value, percent)
         return value if value && rand(1..100) < percent # => Structure intéressante!
         return rand(1..6)

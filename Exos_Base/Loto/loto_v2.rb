@@ -29,7 +29,7 @@ while stop == false
     if rand_nb_joueurs == true
         nb_joueurs = Random.rand(1..1000)
     end
-    puts "#{nb_joueurs} ont participé au tirage"
+    puts "#{nb_joueurs}personnes ont participé au tirage"
 
     #calcul cagnote (20% de commission)
     company.calculate_cagnotte nb_joueurs
