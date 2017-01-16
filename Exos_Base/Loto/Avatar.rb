@@ -68,10 +68,10 @@ class Avatar
     puts "Vous avez #{@numeros_gagnants} numéros gagnants"
   end
 
-  def calcul_montant_gagne company
+  def calcul_montant_gagne company,time
     if @numeros_gagnants != 5 && @numeros_gagnants != 0
         coef_gain = @numeros_gagnants.to_f / 5
-        montant_gagne = (company.get_cagnote * coef_gain**12).to_i
+        montant_gagne = (company.get_cagnote* time.get_coef_event * coef_gain**12).to_i
         puts "Vous obtenez #{montant_gagne}€"
         company.decrement_cagnote montant_gagne
         self.earn_money montant_gagne

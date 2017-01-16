@@ -1,12 +1,15 @@
-require './Exos_Base/Loto/Joueur.rb'
-require './Exos_Base/Loto/Company.rb'
-require './Exos_Base/Loto/Avatar.rb'
+require './Exos_Base/Loto/joueur.rb'
+require './Exos_Base/Loto/company.rb'
+require './Exos_Base/Loto/avatar.rb'
+require './Exos_Base/Loto/time.rb'
 
 #init variables
 avatar = Avatar.new
 avatar.init
 company = Company.new
 company.init_variables
+time = Time.new
+time.init
 nb_joueurs = 1
 nb_essais = 0
 
@@ -18,6 +21,10 @@ tirage_auto = false
 
 stop = false
 while stop == false  
+    #gestion des evenements temporels
+    time.increment_day
+    time.draw_date
+
     #nombre de joueurs aléatoire
     if rand_nb_joueurs == true
         nb_joueurs = Random.rand(1..1000)
@@ -43,14 +50,14 @@ while stop == false
     avatar.numeros_trouves tirage
 
     #Calcul montant gagné
-    avatar.calcul_montant_gagne company
+    avatar.calcul_montant_gagne company,time
 
     #Calcul autres joueurs
     gains_autres_joueurs = 0
     other_player = Joueur.new
     other_player.set_won
     nb_joueurs.times do
-        gains_autres_joueurs += other_player.get_amount_win tirage,company.get_cagnote
+        gains_autres_joueurs += other_player.get_amount_win tirage,company.get_cagnote,time
     end
     company.decrement_cagnote gains_autres_joueurs
     puts "Les #{nb_joueurs} autres joueurs qui ont participé ont au total gagné #{gains_autres_joueurs}€"

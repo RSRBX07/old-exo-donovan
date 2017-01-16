@@ -1,8 +1,8 @@
 class Joueur
 
-    def get_amount_win tirage,cagnote
+    def get_amount_win tirage,cagnote,time
         coef_gain = get_correct_numbers(tirage).to_f / 5
-        return (cagnote * coef_gain**12).to_i
+        return (cagnote* time.get_coef_event * coef_gain**12).to_i
     end
 
     def get_correct_numbers tirage

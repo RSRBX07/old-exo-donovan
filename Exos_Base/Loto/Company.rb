@@ -18,8 +18,13 @@ class Company
 
   def check_refil
     if @cagnote < 10000
-      @cagnote += (0.5*@benefice).to_i
-      @benefice -= (0.5*@benefice).to_i
+      if @benefice > 100000
+        @cagnote += 100000
+        @benefice -= 100000
+      else
+        @cagnote += (0.5*@benefice).to_i
+        @benefice -= (0.5*@benefice).to_i
+      end
     end
   end
 
