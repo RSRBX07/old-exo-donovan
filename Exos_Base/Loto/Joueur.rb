@@ -23,6 +23,10 @@ class Joueur
         @won = true
     end
 
+    #attr_reader:won
+    #attr_writer:won
+    #??????
+
     def set_won
         @won = false
     end
