@@ -1,4 +1,5 @@
-class Plane < vehicle
+require './vehicle.rb'
+class Plane < Vehicle
   attr_reader :is_flying
 
   def initialize
