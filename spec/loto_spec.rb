@@ -1,4 +1,4 @@
-require_relative './loto_v2.rb'
+require_relative '../loto_v2.rb'
 
 RSpec.describe Game do
   it 'Le tirage du joueur est valide' do
