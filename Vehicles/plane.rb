@@ -1,9 +1,10 @@
-require './vehicle.rb'
+require_relative './vehicle.rb'
 
 class Plane < Vehicle
   attr_reader :is_flying
 
   def initialize
+    super
     @is_flying = false
   end
 
