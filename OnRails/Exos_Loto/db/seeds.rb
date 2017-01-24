@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Games.create[
-  {game: "Loto du lundi", description: "Triage de Loto", player: 6155},
-  {game: "Loto du mardi", description: "Triage de Loto", player: 6155},
-  {game: "Loto du mercredi", description: "Triage de Loto", player: 6155},
-  {game: "Loto du jeudi", description: "Triage de Loto", player: 6155},
-  {game: "Loto du vendredi", description: "Triage de Loto", player: 6155}
-]
+Game.destroy_all
+Game.create([
+  {name: "Loto du lundi", description: "Triage de Loto", players: 6155},
+  {name: "Loto du mardi", description: "Triage de Loto", players: 6155},
+  {name: "Loto du mercredi", description: "Triage de Loto", players: 6155},
+  {name: "Loto du jeudi", description: "Triage de Loto", players: 6155},
+  {name: "Loto du vendredi", description: "Triage de Loto", players: 6155}
+])
