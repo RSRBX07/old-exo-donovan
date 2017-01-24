@@ -12,12 +12,15 @@ class Vehicle
 
   def self.add_type vehicle
     @@builded ||= []
-    @@builded.push vehicle if !@@builded.include?(vehicle)
+    if !@@builded.include?(vehicle)
+      @@builded.push (vehicle)
+    end 
   end
 
   def self.builded
     return @@builded
   end
+
 
   def initialize
     @position = :Roubaix
