@@ -5,12 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-games = Games.create([
-  { name : 'Loto du lundi'}, 
-  { name : 'Loto du mardi'},
-  { name : 'Loto du mercredi'},
-  { name : 'Loto du jeudi'},
-  { name : 'Loto du vendredi'},
-])
-
