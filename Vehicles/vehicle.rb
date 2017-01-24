@@ -1,7 +1,26 @@
 class Vehicle
+  
   attr_reader :position
   attr_reader :out_of_order
   attr_reader :speed
+
+
+  def self.new
+    self.add_type self
+    super
+  end
+
+  def self.add_type vehicle
+    @@builded ||= []
+    if !@@builded.include?(vehicle)
+      @@builded.push (vehicle)
+    end 
+  end
+
+  def self.builded
+    return @@builded
+  end
+
 
   def initialize
     @position = :Roubaix
@@ -16,6 +35,7 @@ class Vehicle
   def acceleration amount
     @speed += amount
   end
+
 end
 
     

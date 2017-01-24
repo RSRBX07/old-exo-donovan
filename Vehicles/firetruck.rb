@@ -4,6 +4,7 @@ class Firetruck < Vehicle
   attr_reader :water_capacity
   attr_reader :water_stock
 
+
   def initialize initial_fill
     super
     @water_capacity = 4000
