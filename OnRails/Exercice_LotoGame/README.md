@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+#Circle CI
+Statut : [![CircleCI](https://circleci.com/gh/RSRBX07/exo-donovan/OnRails.svg?style=svg)](https://circleci.com/gh/RSRBX07/exo-donovan/OnRails)
